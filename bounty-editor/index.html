@@ -36,31 +36,31 @@
             <p class="title">Bounty Builder</p>
             <nav>
                 <a href="/">Bounty Board</a>
-                <a id="sign-out-link" href="/auth">Go on, git!</a>
+                <a id="sign-out-link" href="/auth">Go on git!</a>
             </nav>
         </header>
 
         <main>
             <form id="bounty-form">
                 <label>
-                    <div>Name*</div>
+                    <div>*Name</div>
                     <input name="name" required placeholder="Who are ya after?" />
                 </label>
 
                 <label>
-                    <div>Threat Level*</div>
+                    <div>*Threat Level</div>
                     <select name="category" required>
                         <option disabled selected>Choose One</option>
-                        <option value="green">🟢</option>
-                        <option value="yellow">🟡</option>
-                        <option value="orange">🟠</option>
-                        <option value="red">🔴</option>
-                        <option value="black">⚫️</option>
+                        <option value="green">🟢 Nuisance</option>
+                        <option value="yellow">🟡 Problem</option>
+                        <option value="orange">🟠 Hazard</option>
+                        <option value="red">🔴 Extremely Dangerous</option>
+                        <option value="black">⚫️ Death Walkin</option>
                     </select>
                 </label>
 
                 <label>
-                    <div>Description*</div>
+                    <div>*Description</div>
                     <textarea
                         name="description"
                         required

@@ -28,3 +28,6 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function createBounty(bounty) {
+    return await client.from('bounties').insert(bounty).single();
+}
