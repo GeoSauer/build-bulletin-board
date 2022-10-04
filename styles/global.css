@@ -1,6 +1,6 @@
 :root {
     --background: rgb(224, 234, 247);
-    --header-background: white;
+    --header-background: rgb(197, 188, 188);
     --text-color: rgb(7, 5, 68);
     --label-color: rgb(75, 102, 98);
     --placeholder-color: rgb(136, 136, 153);
@@ -79,10 +79,11 @@ main {
     justify-items: center;
     font-size: 1.5em;
     color: rgb(217, 236, 217);
+}
+
+#danger-level p {
     margin: 0px;
-    /* background-image: url('assets/threat-level.jpeg'); */
-    /* height: 80px;
-    width: 200px; */
+    margin-bottom: 10px;
 }
 
 footer {
