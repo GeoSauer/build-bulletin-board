@@ -15,7 +15,11 @@ body {
     height: 100vh;
     font-family: var(--primary-font);
     color: var(--text-color);
-    background: var(--background);
+    /* background: var(--background); */
+    background-image: url('/assets/wood.jpeg');
+    background-repeat: repeat-y;
+    background-size: cover;
+
     display: grid;
     grid-template-rows: auto 1fr;
 }
@@ -68,4 +72,19 @@ main {
 
 .hidden {
     display: none;
+}
+
+#danger-level {
+    display: grid;
+    justify-items: center;
+    font-size: 1.5em;
+    color: rgb(217, 236, 217);
+    margin: 0px;
+    /* background-image: url('assets/threat-level.jpeg'); */
+    /* height: 80px;
+    width: 200px; */
+}
+
+footer {
+    text-align: end;
 }

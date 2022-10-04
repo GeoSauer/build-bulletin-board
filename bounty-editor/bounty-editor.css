@@ -10,13 +10,20 @@
 }
 
 li {
-    background: var(--offset-color);
+    background-image: url('/assets/bounty.png');
+    height: minmax(275px, 1fr);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: var(--offset-color); */
     box-shadow: var(--box-shadow);
 }
 
 li h2,
-li p {
+li p,
+li div {
     padding: 0 10px;
+    text-align: center;
 }
 
 li h2 {

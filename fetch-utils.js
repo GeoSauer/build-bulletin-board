@@ -32,6 +32,10 @@ export async function createBounty(bounty) {
     return await client.from('bounties').insert(bounty).single();
 }
 
+export async function getBounties() {
+    return await client.from('bounties').select('*').order('created_at', { ascending: false });
+}
+
 export async function uploadImage(bucketName, imagePath, imageFile) {
     const bucket = client.storage.from(bucketName);
 
