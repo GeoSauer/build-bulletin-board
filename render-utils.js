@@ -3,6 +3,11 @@ export function renderBounty(bounty) {
 
     const img = document.createElement('img');
     img.src = bounty.image_url;
+    // if (!bounty.image_url) {
+    //     img.src = '../assets/wanted.png';
+    // } else {
+    //     img.src = bounty.image_url;
+    // }
 
     const h2 = document.createElement('h2');
     h2.textContent = bounty.name;
