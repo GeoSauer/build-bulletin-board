@@ -31,3 +31,22 @@ export async function signOutUser() {
 export async function createBounty(bounty) {
     return await client.from('bounties').insert(bounty).single();
 }
+
+export async function uploadImage(bucketName, imagePath, imageFile) {
+    const bucket = client.storage.from(bucketName);
+
+    const response = await bucket.upload(imagePath, imageFile, {
+        cacheControl: '3600',
+        upsert: true,
+    });
+
+    if (response.error) {
+        // eslint-disable-next-line no-console
+        console.log(response.error);
+        return null;
+    }
+
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
+
+    return url;
+}
