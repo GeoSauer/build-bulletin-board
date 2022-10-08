@@ -22,7 +22,13 @@ bountyForm.addEventListener('submit', async (e) => {
     const imageFile = formData.get('image');
     const randomFolder = Math.floor(Date.now() * Math.random());
     const imagePath = `bounties/${randomFolder}/${imageFile.name}`;
-    const url = await uploadImage('images', imagePath, imageFile);
+    let url = null;
+
+    if (!imageFile.name) {
+        url = null;
+    } else {
+        url = await uploadImage('images', imagePath, imageFile);
+    }
 
     const bounty = {
         name: formData.get('name'),
