@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Bounty Board</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="bounty-editor.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <!-- <link rel="stylesheet" href="/styles/form.css" /> -->
+        <link rel="stylesheet" href="bounty-editor.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/wanted.png" alt="logo" />
+            <p class="title">Bounty Builder</p>
+            <nav>
+                <a href="/">Bounty Board</a>
+                <a id="sign-out-link" href="/auth">Go on git!</a>
+            </nav>
+        </header>
+
+        <main>
+            <form id="bounty-form">
+                <label>
+                    <div>*Name</div>
+                    <input name="name" required placeholder="Who are ya after?" />
+                </label>
+
+                <label>
+                    <div>*Danger Level</div>
+                    <select name="category" required>
+                        <option disabled selected>Choose One</option>
+                        <option value="green">🟢 Nuisance</option>
+                        <option value="yellow">🟡 Problem</option>
+                        <option value="orange">🟠 Hazard</option>
+                        <option value="red">🔴 Extremely Dangerous</option>
+                        <option value="black">⚫️ Death Walkin</option>
+                    </select>
+                </label>
+
+                <label>
+                    <div>*Description</div>
+                    <textarea
+                        name="description"
+                        required
+                        placeholder="How do we identify the mark?"
+                    ></textarea>
+                </label>
+
+                <label>
+                    <div>Photo</div>
+                    <input
+                        id="image-input"
+                        name="image"
+                        type="file"
+                        placeholder="Give us a peep at their mug"
+                    />
+                </label>
+                <img id="preview" class="preview" alt="avatar preview" src="../assets/wanted.png" />
+
+                <label>
+                    <div>Contact Info</div>
+                    <textarea name="contact" placeholder="How do we get ahold of ya?"></textarea>
+                </label>
+
+                <button>Add Bounty</button>
+                <div id="fine-print">'*' denotes a required field</div>
+
+                <p id="error-display"></p>
+            </form>
+        </main>
+
+        <footer>
+            <a href="https://www.flaticon.com/free-icons/wanted" title="wanted icons"
+                >Wanted icons created by surang - Flaticon</a
+            >
+        </footer>
+    </body>
+</html>
